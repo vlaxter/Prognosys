@@ -1,0 +1,42 @@
+﻿[
+  {
+    "outputFile": "Content/monster-lite/scss/style.css",
+    "inputFile": "Content/monster-lite/scss/style.scss"
+  },
+  {
+    "outputFile": "Content/monster-lite/scss/app.css",
+    "inputFile": "Content/monster-lite/scss/app.scss"
+  },
+  {
+    "outputFile": "Content/monster-lite/scss/grid.css",
+    "inputFile": "Content/monster-lite/scss/grid.scss"
+  },
+  {
+    "outputFile": "Content/monster-lite/scss/pages.css",
+    "inputFile": "Content/monster-lite/scss/pages.scss"
+  },
+  {
+    "outputFile": "Content/monster-lite/scss/sidebar.css",
+    "inputFile": "Content/monster-lite/scss/sidebar.scss"
+  },
+  {
+    "outputFile": "Content/monster-lite/scss/widgets.css",
+    "inputFile": "Content/monster-lite/scss/widgets.scss"
+  },
+  {
+    "outputFile": "Content/monster-lite/scss/variable.css",
+    "inputFile": "Content/monster-lite/scss/variable.scss"
+  },
+  {
+    "outputFile": "Content/monster-lite/scss/responsive.css",
+    "inputFile": "Content/monster-lite/scss/responsive.scss"
+  },
+  {
+    "outputFile": "Content/monster-lite/scss/colors/red.css",
+    "inputFile": "Content/monster-lite/scss/colors/red.scss"
+  },
+  {
+    "outputFile": "Content/monster-lite/scss/colors/blue-dark.css",
+    "inputFile": "Content/monster-lite/scss/colors/blue-dark.scss"
+  }
+]
