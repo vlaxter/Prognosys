@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prognosys.API", "Prognosys.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prognosys.API.Tests", "Prognosys.API.Tests\Prognosys.API.Tests.csproj", "{D7DDACED-FDA8-4407-A6F5-900F3ED18674}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prognosys.Repository.Sql", "Prognosys.Repository.Sql\Prognosys.Repository.Sql.csproj", "{BEB31137-574A-4644-A9CC-CDA5FFFFA466}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D7DDACED-FDA8-4407-A6F5-900F3ED18674}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7DDACED-FDA8-4407-A6F5-900F3ED18674}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7DDACED-FDA8-4407-A6F5-900F3ED18674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEB31137-574A-4644-A9CC-CDA5FFFFA466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEB31137-574A-4644-A9CC-CDA5FFFFA466}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEB31137-574A-4644-A9CC-CDA5FFFFA466}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEB31137-574A-4644-A9CC-CDA5FFFFA466}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
