@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prognosys.API", "Prognosys.API\Prognosys.API.csproj", "{B2265AD2-43EA-4D97-B028-90FCB1053574}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prognosys.API.Tests", "Prognosys.API.Tests\Prognosys.API.Tests.csproj", "{D7DDACED-FDA8-4407-A6F5-900F3ED18674}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2265AD2-43EA-4D97-B028-90FCB1053574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2265AD2-43EA-4D97-B028-90FCB1053574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2265AD2-43EA-4D97-B028-90FCB1053574}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2265AD2-43EA-4D97-B028-90FCB1053574}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7DDACED-FDA8-4407-A6F5-900F3ED18674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7DDACED-FDA8-4407-A6F5-900F3ED18674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7DDACED-FDA8-4407-A6F5-900F3ED18674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7DDACED-FDA8-4407-A6F5-900F3ED18674}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E00AFE73-EDB5-42FF-B522-35DEA89ECB94}
+	EndGlobalSection
+EndGlobal
