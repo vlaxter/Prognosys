@@ -54,12 +54,18 @@
     <Compile Include="Entities\PrognosysContext.cs" />
     <Compile Include="Entities\Project.cs" />
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="SqlRepository.cs" />
+    <Compile Include="Repositories\ProjectsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Prognosys.Shared\Prognosys.Shared.csproj">
+      <Project>{ff64943d-dfd8-4f17-aee0-b02bc58f3398}</Project>
+      <Name>Prognosys.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

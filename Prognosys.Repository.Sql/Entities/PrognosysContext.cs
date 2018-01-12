@@ -9,6 +9,6 @@ namespace Prognosys.Repository.Sql.Entities
         {
         }
 
-        public DbSet<Project> Project { get; set; }
+        public DbSet<Project> Projects { get; set; }
     }
 }
