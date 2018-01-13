@@ -1,14 +1,23 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Prognosys.Repository.Sql.Entities
 {
-    public class Project
+    class Project : EntityBase
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Id { get; set; }
-
+        [Required]
         public string Name { get; set; }
-    }
+
+        public string Description { get; set; }
+
+        public int ClientId { get; set; }
+        public virtual Client Client { get; set; }
+
+        public int StageId { get; set; }
+        public virtual ProjectStage Stage { get; set; }
+
+        public virtual ICollection<Resource> Resources { get; set; }
+
+        public virtual ICollection<Allocation> Allocations { get; set; }
+    }    
 }

@@ -51,8 +51,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Allocation.cs" />
+    <Compile Include="Entities\Client.cs" />
+    <Compile Include="Entities\EntityBase.cs" />
     <Compile Include="Entities\PrognosysContext.cs" />
     <Compile Include="Entities\Project.cs" />
+    <Compile Include="Entities\ProjectStage.cs" />
+    <Compile Include="Entities\Resource.cs" />
+    <Compile Include="Entities\ResourceRole.cs" />
+    <Compile Include="Migrations\201801131617581_InitialCreate.cs" />
+    <Compile Include="Migrations\201801131617581_InitialCreate.Designer.cs">
+      <DependentUpon>201801131617581_InitialCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\ProjectsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,6 +78,11 @@
       <Project>{ff64943d-dfd8-4f17-aee0-b02bc58f3398}</Project>
       <Name>Prognosys.Shared</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201801131617581_InitialCreate.resx">
+      <DependentUpon>201801131617581_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
