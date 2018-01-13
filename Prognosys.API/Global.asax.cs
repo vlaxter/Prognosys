@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Prognosys.API.App_Start;
 using System.Web.Http;
-using System.Web.Mvc;
-using System.Web.Optimization;
-using System.Web.Routing;
 
 namespace Prognosys.API
 {
@@ -13,6 +7,7 @@ namespace Prognosys.API
     {
         protected void Application_Start()
         {
+            SimpleInjectorInitializer.Initialize();
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }

@@ -1,5 +1,6 @@
 ﻿using Prognosys.Repository.Sql.Entities;
 using Prognosys.Shared.DTOs;
+using Prognosys.Shared.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Prognosys.Repository.Sql.Repositories
 {
-    public class ProjectsRepository
+    public class ProjectsRepository : IProjectsRepository
     {
         private PrognosysContext db;
 

@@ -1,10 +1,11 @@
 ﻿using Prognosys.Shared.DTOs;
+using Prognosys.Shared.Models;
 using System.Collections.Generic;
 
 namespace Prognosys.Shared.Interfaces.Services
 {
     public interface IProjectsService
     {
-        List<ProjectDto> GetProjets();
+        ProjectModel GetProjet(int id);
     }
 }

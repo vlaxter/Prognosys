@@ -161,6 +161,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
@@ -183,11 +184,23 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Projects\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Prognosys.Core\Prognosys.Core.csproj">
+      <Project>{dbb1f60f-879a-44fa-9762-82d98e8b66ab}</Project>
+      <Name>Prognosys.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Prognosys.Repository.Sql\Prognosys.Repository.Sql.csproj">
+      <Project>{beb31137-574a-4644-a9cc-cda5ffffa466}</Project>
+      <Name>Prognosys.Repository.Sql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Prognosys.Shared\Prognosys.Shared.csproj">
+      <Project>{ff64943d-dfd8-4f17-aee0-b02bc58f3398}</Project>
+      <Name>Prognosys.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
