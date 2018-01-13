@@ -11,16 +11,16 @@ namespace Prognosys.Repository.Sql.Repositories
 {
     public class ProjectsRepository : IProjectsRepository
     {
-        private PrognosysContext db;
+        private readonly PrognosysContext _context;
 
         public ProjectsRepository()
         {
-            db = new PrognosysContext();
+            _context = new PrognosysContext();
         }
 
         public ProjectDto GetProject(int id)
         {
-            var project = db.Projects.Find(id);
+            var project = _context.Projects.Find(id);
             return new ProjectDto { ID = project.Id, Name = project.Name };
         }
     }

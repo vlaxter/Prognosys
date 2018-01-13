@@ -8,7 +8,7 @@ using System.Web.Http;
 
 namespace Prognosys.API.App_Start
 {
-    public class SimpleInjectorInitializer
+    class SimpleInjectorInitializer
     {
         /// <summary>
         ///     Initializes injector
@@ -17,8 +17,8 @@ namespace Prognosys.API.App_Start
         {
             var container = new Container();
 
-            container.Options.DefaultScopedLifestyle = new WebApiRequestLifestyle();
-
+            container.Options.DefaultScopedLifestyle = new SimpleInjector.Lifestyles.AsyncScopedLifestyle();
+            
             container.Register<IProjectsService, ProjectsService>(Lifestyle.Scoped);
             container.Register<IProjectsRepository, ProjectsRepository>(Lifestyle.Scoped);
 
