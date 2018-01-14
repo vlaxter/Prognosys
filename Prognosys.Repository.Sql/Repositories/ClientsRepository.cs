@@ -1,7 +1,10 @@
-﻿using Prognosys.Repository.Sql.Entities;
+﻿using AutoMapper;
+using Prognosys.Repository.Sql.Entities;
+using Prognosys.Repository.Sql.Mapper;
 using Prognosys.Shared.DTOs;
 using Prognosys.Shared.Exceptions;
 using Prognosys.Shared.Interfaces.Repositories;
+using Prognosys.Shared.MapperProfiles;
 using System.Data.Entity;
 using System.Linq;
 
@@ -10,18 +13,20 @@ namespace Prognosys.Repository.Sql.Repositories
     public class ClientsRepository : IClientsRepository
     {
         private readonly PrognosysContext _context;
+        private readonly IMapper _mapper;
 
         public ClientsRepository()
         {
             _context = new PrognosysContext();
+            _mapper = RepositoryMapper.Initialize();
         }
 
         public ClientDto CreateClient(ClientDto clientDto)
         {
-            var client = new Client { Name = clientDto.Name };
-            var newClient = _context.Clients.Add(client);
+            var client = _mapper.Map<Client>(clientDto);
+            client = _context.Clients.Add(client);
             _context.SaveChanges();
-            return new ClientDto { Id = client.Id, Name = client.Name };
+            return _mapper.Map<ClientDto>(client);
         }
 
         public void DeleteClient(int id)
@@ -39,12 +44,12 @@ namespace Prognosys.Repository.Sql.Repositories
         public ClientDto GetClient(int id)
         {
             var client = _context.Clients.Find(id);
-            return new ClientDto { Id = client.Id, Name = client.Name };
+            return _mapper.Map<ClientDto>(client);
         }
 
         public IQueryable<ClientDto> GetClients()
         {
-            return _context.Clients.Select(c => new ClientDto { Id = c.Id, Name = c.Name });
+            return _context.Clients.Select(c => _mapper.Map<ClientDto>(c));
         }
 
         public void UpdateClient(int id, ClientDto clientDto)
@@ -55,9 +60,8 @@ namespace Prognosys.Repository.Sql.Repositories
                 throw new NotFoundInRepositoryException();
             }
 
-            // Replace with mapping tool
-            client.Name = clientDto.Name;
-
+            _mapper.Map(clientDto, client);
+            
             _context.Entry(client).State = EntityState.Modified;
             _context.SaveChanges();
         }

@@ -1,6 +1,8 @@
-﻿using Prognosys.Shared.DTOs;
+﻿using AutoMapper;
+using Prognosys.Shared.DTOs;
 using Prognosys.Shared.Interfaces.Repositories;
 using Prognosys.Shared.Interfaces.Services;
+using Prognosys.Shared.MapperProfiles;
 using Prognosys.Shared.Models;
 using System;
 using System.Linq;
@@ -10,16 +12,18 @@ namespace Prognosys.Core.Services
     public class ClientsService : IClientsService
     {
         private readonly IClientsRepository _clientsRepository;
+        private readonly IMapper _mapper;
 
         public ClientsService(IClientsRepository clientsRepository)
         {
             _clientsRepository = clientsRepository;
+            _mapper = MapperInitializer.Initialize();
         }
     
         public ClientModel CreateClient(ClientModel client)
         {
-            var newClient =_clientsRepository.CreateClient(new ClientDto { Name = client.Name });
-            return new ClientModel { Id = newClient.Id, Name = newClient.Name };
+            var newClient =_clientsRepository.CreateClient(_mapper.Map<ClientDto>(client));
+            return _mapper.Map<ClientModel>(newClient);
         }
 
         public void DeleteClient(int id)
@@ -30,17 +34,19 @@ namespace Prognosys.Core.Services
         public ClientModel GetClient(int id)
         {
             var client =_clientsRepository.GetClient(id);
-            return new ClientModel { Id = client.Id, Name = client.Name };
+            return _mapper.Map<ClientModel>(client);
         }
 
         public IQueryable<ClientModel> GetClients()
         {
-            return _clientsRepository.GetClients().Select(c => new ClientModel { Id = c.Id, Name = c.Name });
+            var clients = _clientsRepository.GetClients();
+            var clientsModelList = clients.Select(c => _mapper.Map<ClientModel>(c));
+            return clientsModelList;
         }
 
         public void UpdateClient(int id, ClientModel clientModel)
         {
-            _clientsRepository.UpdateClient(id, new ClientDto { Id = clientModel.Id, Name = clientModel.Name });
+            _clientsRepository.UpdateClient(id, _mapper.Map<ClientDto>(clientModel));
         }
     }
 }

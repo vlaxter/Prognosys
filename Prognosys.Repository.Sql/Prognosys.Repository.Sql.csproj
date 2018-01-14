@@ -59,6 +59,7 @@
     <Compile Include="Entities\ProjectStage.cs" />
     <Compile Include="Entities\Resource.cs" />
     <Compile Include="Entities\ResourceRole.cs" />
+    <Compile Include="Mapper\RepositoryMapper.cs" />
     <Compile Include="Migrations\201801131617581_InitialCreate.cs" />
     <Compile Include="Migrations\201801131617581_InitialCreate.Designer.cs">
       <DependentUpon>201801131617581_InitialCreate.cs</DependentUpon>
