@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Prognosys.Core
+namespace Prognosys.Core.Services
 {
     public class ProjectsService : IProjectsService
     {

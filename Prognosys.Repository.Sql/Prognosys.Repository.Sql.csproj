@@ -64,6 +64,7 @@
       <DependentUpon>201801131617581_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Repositories\ClientsRepository.cs" />
     <Compile Include="Repositories\ProjectsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

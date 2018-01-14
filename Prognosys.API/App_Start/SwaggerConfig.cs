@@ -7,8 +7,14 @@ using Swashbuckle.Application;
 
 namespace Prognosys.API
 {
+    /// <summary>
+    /// Swagger configuration
+    /// </summary>
     public class SwaggerConfig
     {
+        /// <summary>
+        /// Swagger registration settings
+        /// </summary>
         public static void Register()
         {
             var thisAssembly = typeof(SwaggerConfig).Assembly;

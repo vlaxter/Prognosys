@@ -1,6 +1,4 @@
-﻿using Prognosys.Shared.DTOs;
-using Prognosys.Shared.Models;
-using System.Collections.Generic;
+﻿using Prognosys.Shared.Models;
 
 namespace Prognosys.Shared.Interfaces.Services
 {

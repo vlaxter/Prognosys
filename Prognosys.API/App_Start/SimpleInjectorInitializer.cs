@@ -1,4 +1,4 @@
-﻿using Prognosys.Core;
+﻿using Prognosys.Core.Services;
 using Prognosys.Repository.Sql.Repositories;
 using Prognosys.Shared.Interfaces.Repositories;
 using Prognosys.Shared.Interfaces.Services;
@@ -21,6 +21,8 @@ namespace Prognosys.API.App_Start
             
             container.Register<IProjectsService, ProjectsService>(Lifestyle.Scoped);
             container.Register<IProjectsRepository, ProjectsRepository>(Lifestyle.Scoped);
+            container.Register<IClientsService, ClientsService>(Lifestyle.Scoped);
+            container.Register<IClientsRepository, ClientsRepository>(Lifestyle.Scoped);
 
             container.Verify();
 

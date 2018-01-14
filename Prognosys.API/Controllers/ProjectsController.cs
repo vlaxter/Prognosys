@@ -6,13 +6,17 @@ using System.Web.Http;
 namespace Prognosys.API.Controllers
 {
     /// <summary>
-    /// Manages projects requests
+    /// Controller for projects
     /// </summary>
     [RoutePrefix("v1/Projects")]
     public class ProjectsController : ApiController
     {
         private readonly IProjectsService _projectsService;
 
+        /// <summary>
+        /// Constructor to inject the projects service dependency
+        /// </summary>
+        /// <param name="projectsService">Projects service instance</param>
         public ProjectsController(IProjectsService projectsService)
         {
             _projectsService = projectsService;
