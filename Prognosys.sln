@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prognosys.API", "Prognosys.API\Prognosys.API.csproj", "{B2265AD2-43EA-4D97-B028-90FCB1053574}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prognosys.API.Tests", "Prognosys.API.Tests\Prognosys.API.Tests.csproj", "{D7DDACED-FDA8-4407-A6F5-900F3ED18674}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prognosys.Tests", "Prognosys.API.Tests\Prognosys.Tests.csproj", "{D7DDACED-FDA8-4407-A6F5-900F3ED18674}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prognosys.Repository.Sql", "Prognosys.Repository.Sql\Prognosys.Repository.Sql.csproj", "{BEB31137-574A-4644-A9CC-CDA5FFFFA466}"
 EndProject
