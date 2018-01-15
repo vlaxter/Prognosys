@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prognosys.API", "Prognosys.API\Prognosys.API.csproj", "{B2265AD2-43EA-4D97-B028-90FCB1053574}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prognosys.Tests", "Prognosys.API.Tests\Prognosys.Tests.csproj", "{D7DDACED-FDA8-4407-A6F5-900F3ED18674}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prognosys.Repository.Sql", "Prognosys.Repository.Sql\Prognosys.Repository.Sql.csproj", "{BEB31137-574A-4644-A9CC-CDA5FFFFA466}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prognosys.Shared", "Prognosys.Shared\Prognosys.Shared.csproj", "{FF64943D-DFD8-4F17-AEE0-B02BC58F3398}"
@@ -14,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prognosys.Web", "Prognosys.Web\Prognosys.Web.csproj", "{78753C0C-1C01-4511-BEED-0DD3C09FA3F9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prognosys.Core", "Prognosys.Core\Prognosys.Core.csproj", "{DBB1F60F-879A-44FA-9762-82D98E8B66AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prognosys.Tests", "Prognosys.Tests\Prognosys.Tests.csproj", "{D7DDACED-FDA8-4407-A6F5-900F3ED18674}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +25,6 @@ Global
 		{B2265AD2-43EA-4D97-B028-90FCB1053574}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2265AD2-43EA-4D97-B028-90FCB1053574}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2265AD2-43EA-4D97-B028-90FCB1053574}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D7DDACED-FDA8-4407-A6F5-900F3ED18674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D7DDACED-FDA8-4407-A6F5-900F3ED18674}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D7DDACED-FDA8-4407-A6F5-900F3ED18674}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D7DDACED-FDA8-4407-A6F5-900F3ED18674}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BEB31137-574A-4644-A9CC-CDA5FFFFA466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BEB31137-574A-4644-A9CC-CDA5FFFFA466}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEB31137-574A-4644-A9CC-CDA5FFFFA466}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{DBB1F60F-879A-44FA-9762-82D98E8B66AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBB1F60F-879A-44FA-9762-82D98E8B66AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBB1F60F-879A-44FA-9762-82D98E8B66AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7DDACED-FDA8-4407-A6F5-900F3ED18674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7DDACED-FDA8-4407-A6F5-900F3ED18674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7DDACED-FDA8-4407-A6F5-900F3ED18674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7DDACED-FDA8-4407-A6F5-900F3ED18674}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
