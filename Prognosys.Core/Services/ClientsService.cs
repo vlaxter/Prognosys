@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Prognosys.Shared.DTOs;
 using Prognosys.Shared.Interfaces.Repositories;
 using Prognosys.Shared.Interfaces.Services;
 using Prognosys.Shared.MapperProfiles;
 using Prognosys.Shared.Models;
-using System;
 using System.Linq;
 
 namespace Prognosys.Core.Services
@@ -39,9 +39,8 @@ namespace Prognosys.Core.Services
 
         public IQueryable<ClientModel> GetClients()
         {
-            var clients = _clientsRepository.GetClients();
-            var clientsModelList = clients.Select(c => _mapper.Map<ClientModel>(c));
-            return clientsModelList;
+            var clients = _clientsRepository.GetClients().ProjectTo<ClientModel>(_mapper.ConfigurationProvider);
+            return clients;
         }
 
         public void UpdateClient(int id, ClientModel clientModel)

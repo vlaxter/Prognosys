@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Prognosys.Repository.Sql.Entities;
 using Prognosys.Repository.Sql.Mapper;
 using Prognosys.Shared.DTOs;
 using Prognosys.Shared.Exceptions;
 using Prognosys.Shared.Interfaces.Repositories;
-using Prognosys.Shared.MapperProfiles;
 using System.Data.Entity;
 using System.Linq;
 
@@ -49,7 +49,8 @@ namespace Prognosys.Repository.Sql.Repositories
 
         public IQueryable<ClientDto> GetClients()
         {
-            return _context.Clients.Select(c => _mapper.Map<ClientDto>(c));
+            var clients = _context.Clients.ProjectTo<ClientDto>(_mapper.ConfigurationProvider);
+            return clients;
         }
 
         public void UpdateClient(int id, ClientDto clientDto)
@@ -61,7 +62,7 @@ namespace Prognosys.Repository.Sql.Repositories
             }
 
             _mapper.Map(clientDto, client);
-            
+
             _context.Entry(client).State = EntityState.Modified;
             _context.SaveChanges();
         }
