@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using System.Web.Http.Description;
-using Prognosys.Repository.Sql.Entities;
+﻿using Prognosys.Shared.Exceptions;
 using Prognosys.Shared.Interfaces.Services;
 using Prognosys.Shared.Models;
+using System.Linq;
+using System.Net;
+using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace Prognosys.API.Controllers
 {
@@ -52,7 +46,14 @@ namespace Prognosys.API.Controllers
         [ResponseType(typeof(ClientModel))]
         public IHttpActionResult GetClient(int id)
         {
-            return Ok(_clientsService.GetClient(id));
+            try
+            {
+                return Ok(_clientsService.GetClient(id));
+            }
+            catch (NotFoundInRepositoryException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         /// <summary>
@@ -61,17 +62,24 @@ namespace Prognosys.API.Controllers
         /// <param name="id">Id of the clientes</param>
         /// <param name="clientModel">Modified client</param>
         /// <returns>Http result</returns>
-        [HttpPatch]
+        [HttpPut]
         [Route("{id:int}")]
         [ResponseType(typeof(void))]
-        public IHttpActionResult PatchClient(int id, ClientModel clientModel)
+        public IHttpActionResult PutClient(int id, ClientModel clientModel)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _clientsService.UpdateClient(id, clientModel);
+            try
+            {
+                _clientsService.UpdateClient(id, clientModel);
+            }
+            catch (NotFoundInRepositoryException ex)
+            {
+                BadRequest(ex.Message);
+            }
 
             return StatusCode(HttpStatusCode.NoContent);
         }
@@ -104,7 +112,15 @@ namespace Prognosys.API.Controllers
         [ResponseType(typeof(void))]
         public IHttpActionResult DeleteClient(int id)
         {
-            _clientsService.DeleteClient(id);
+            try
+            {
+                _clientsService.DeleteClient(id);
+            }
+            catch (NotFoundInRepositoryException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
             return StatusCode(HttpStatusCode.NoContent);
         }
     }

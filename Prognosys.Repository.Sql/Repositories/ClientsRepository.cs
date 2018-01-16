@@ -26,6 +26,7 @@ namespace Prognosys.Repository.Sql.Repositories
             var client = _mapper.Map<Client>(clientDto);
             client = _context.Clients.Add(client);
             _context.SaveChanges();
+
             return _mapper.Map<ClientDto>(client);
         }
 
@@ -44,12 +45,18 @@ namespace Prognosys.Repository.Sql.Repositories
         public ClientDto GetClient(int id)
         {
             var client = _context.Clients.Find(id);
+            if (client == null)
+            {
+                throw new NotFoundInRepositoryException();
+            }
+
             return _mapper.Map<ClientDto>(client);
         }
 
         public IQueryable<ClientDto> GetClients()
         {
-            var clients = _context.Clients.ProjectTo<ClientDto>(_mapper.ConfigurationProvider);
+            var mapperConfig = _mapper.ConfigurationProvider;
+            var clients = _context.Clients.ProjectTo<ClientDto>(mapperConfig);
             return clients;
         }
 
