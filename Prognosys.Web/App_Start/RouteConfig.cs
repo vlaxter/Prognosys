@@ -16,7 +16,7 @@ namespace Prognosys.Web
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Clients", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "BasicClients", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
