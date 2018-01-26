@@ -8,9 +8,6 @@ namespace Prognosys.Web
 
         public static void RegisterBundles(BundleCollection bundles)
         {
-
-
-
             // Vendor scripts
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-3.2.1.min.js"));
@@ -40,11 +37,17 @@ namespace Prognosys.Web
             // CSS style (bootstrap/inspinia)
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.min.css",
+                      "~/Content/animate.css",
                       "~/Content/style.css"));
 
             bundles.Add(new StyleBundle("~/font-awesome/css").Include(
                       "~/fonts/font-awesome/css/font-awesome.min.css"));
 
+            bundles.Add(new ScriptBundle("~/vue").Include(
+                "~/Scripts/vue.js"));
+
+            bundles.Add(new ScriptBundle("~/vue/clients").Include(
+                "~/Scripts/src/clients/clients.js"));
         }
     }
 }
