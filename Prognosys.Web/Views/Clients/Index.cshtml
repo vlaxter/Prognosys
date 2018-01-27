@@ -1,7 +1,8 @@
 ﻿@model IEnumerable<Prognosys.Web.ViewModels.ClientViewModel>
 
 @{
-    ViewBag.Title = "Index";
+< a href = "~/Controllers/BasicClientsController.cs" > ~/ Controllers / BasicClientsController.cs </ a >
+     ViewBag.Title = "Index";
 }
 
 <div id="app-clients" class="col-md-offset-4 col-md-4">
@@ -16,37 +17,32 @@
             <thead>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.Name)
+                        Name
                     </th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr class="gradeX">
-                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
-                        <td>
-                            <a class="modal-link" href="@Url.Action("ShowModalContent", new { @id = "1"})">
-                                <i class="fa fa-eye"></i>
-                            </a>&nbsp;
-                            <a title="Edit" v-on:click="actionClicked" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil"></i></a>&nbsp;
-                            <a title="Delete" v-on:click="actionClicked"><i class="fa fa-times"></i></a>
-                        </td>
-                    </tr>
-                }
+                <tr v-for="client in clients" class="gradeX">
+                    <td>{{ client.Name }}</td>
+                    <td>
+                        <a class="modal-link" :href="'@Url.Action("ShowModalContent")/' + client.Id"><i class="fa fa-eye"></i></a>&nbsp;
+                        <a title="Edit" v-on:click="actionClicked"><i class="fa fa-pencil"></i></a>&nbsp;
+                        <a title="Delete" v-on:click="actionClicked"><i class="fa fa-times"></i></a>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
 
-    @Html.Partial("../Shared/Modals/_Modal")
+    @Html.Partial("_Modal")
 </div>
 
 @section scripts {
-    @Scripts.Render("~/vue")
-    @Scripts.Render("~/vue/clients")
-
     <script type="text/javascript">
+        // vue objects. Should always be placed above the vue application declaration
+        var clients = @Html.Raw(Json.Encode(Model))
+
         $(function () {
             // Initialize numeric spinner input boxes
             //$(".numeric-spinner").spinedit();
@@ -71,4 +67,7 @@
             });
         });
     </script>
+
+    @Scripts.Render("~/vue")
+    @Scripts.Render("~/vue/clients")
 }

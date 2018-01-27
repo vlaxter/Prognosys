@@ -277,8 +277,8 @@
     <Content Include="Views\Shared\_Navigation.cshtml" />
     <Content Include="Views\Shared\_TopNavbar.cshtml" />
     <Content Include="Views\Clients\Index.cshtml" />
-    <Content Include="Views\Shared\Modals\_Modal.cshtml" />
-    <Content Include="Views\Shared\Modals\_ModalContent.cshtml" />
+    <Content Include="Views\Shared\_Modal.cshtml" />
+    <Content Include="Views\Clients\_ModalContent.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

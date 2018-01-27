@@ -1,6 +1,9 @@
-﻿var app = new Vue({
+﻿
+
+var clientsApp = new Vue({
     el: '#app-clients',
     data: {
+        clients: clients,
     },
     methods: {
         actionClicked: function () {

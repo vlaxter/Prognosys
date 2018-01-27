@@ -31,13 +31,13 @@ namespace Prognosys.Web.Controllers
                 var clientsList = apiClient.Get<List<ClientModel>>("clients");
                 clients = _mapper.Map<List<ClientViewModel>>(clientsList);
             }
-
+            
             return View(clients);
         }
 
         public ActionResult ShowModalContent(int id)
         {
-            return PartialView("Modals/_ModalContent");
+            return PartialView("_ModalContent");
         }
 
         [HttpPost]
